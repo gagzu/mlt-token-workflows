@@ -20,4 +20,5 @@ default: # Define the default configuration for every repository.
 #       # When drools is an UPSTREAM repository, this command will be used.
 #       upstream: mvn clean install -DskipTests -Psuper-fast-build
 #       # When drools is the CURRENT repository, this command will be used.
+
 #       current: mvn clean install -Pintegration-tests
