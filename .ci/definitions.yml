@@ -1,6 +1,6 @@
 version: "2.1"
 
-dependencies: ./dependency-tree.yaml
+dependencies: ./dependency-tree.yml
 default: # Define the default configuration for every repository.
   build-command:
     # We want to skip tests for every upstream repository to speed things up.
