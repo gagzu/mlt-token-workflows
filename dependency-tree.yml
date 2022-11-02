@@ -1,0 +1,7 @@
+version: "2.0"
+
+dependecies:
+  - project: gagzu/mlt-token
+  - project: gagzu/mlt-token-vesting-api
+    dependecies:
+      - project: gagzu/mlt-token

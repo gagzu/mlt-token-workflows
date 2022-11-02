@@ -1,0 +1,22 @@
+version: "2.0"
+dependencies: ./dependency-tree.yaml
+default: # Define the default configuration for every repository.
+  build-command:
+    # We want to skip tests for every upstream repository to speed things up.
+    upstream: echo 'upstream' && pwd
+    # upstream: mvn clean install -DskipTests
+
+    # We want to execute this command for every project triggering the GitHub Action
+    current: mvn clean install
+    
+    # Remove the UPSTREAM repositories to save disk space.
+    after:
+      upstream: echo 'upstream after' && pwd
+      # upstream: rm -rf ./*
+# build: # Additionally, we can define specific configuration per repository
+#   - project: kiegroup/drools
+#     build-command:
+#       # When drools is an UPSTREAM repository, this command will be used.
+#       upstream: mvn clean install -DskipTests -Psuper-fast-build
+#       # When drools is the CURRENT repository, this command will be used.
+#       current: mvn clean install -Pintegration-tests
