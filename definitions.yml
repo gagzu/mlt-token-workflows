@@ -1,4 +1,5 @@
-version: "2.0"
+version: "2.1"
+
 dependencies: ./dependency-tree.yaml
 default: # Define the default configuration for every repository.
   build-command:
